@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -15,12 +15,20 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        neon: "bg-primary/20 text-primary border border-primary hover:bg-primary hover:text-primary-foreground shadow-[0_0_20px_hsl(var(--primary)/0.3)] hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)]",
+        "neon-violet": "bg-secondary/20 text-secondary border border-secondary hover:bg-secondary hover:text-secondary-foreground shadow-[0_0_20px_hsl(var(--secondary)/0.3)] hover:shadow-[0_0_30px_hsl(var(--secondary)/0.5)]",
+        "neon-pink": "bg-accent/20 text-accent border border-accent hover:bg-accent hover:text-accent-foreground shadow-[0_0_20px_hsl(var(--accent)/0.3)] hover:shadow-[0_0_30px_hsl(var(--accent)/0.5)]",
+        glass: "bg-card/40 backdrop-blur-xl border border-border/50 hover:bg-card/60 hover:border-primary/50 text-foreground",
+        play: "bg-gradient-to-r from-primary via-secondary to-accent text-primary-foreground rounded-full shadow-[0_0_30px_hsl(var(--primary)/0.5),0_0_60px_hsl(var(--secondary)/0.3)] hover:shadow-[0_0_40px_hsl(var(--primary)/0.7),0_0_80px_hsl(var(--secondary)/0.5)] hover:scale-105",
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-14 rounded-xl px-10 text-lg",
         icon: "h-10 w-10",
+        "icon-lg": "h-16 w-16",
+        "icon-xl": "h-24 w-24",
       },
     },
     defaultVariants: {
